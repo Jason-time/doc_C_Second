@@ -1,23 +1,15 @@
 ﻿#include<stdio.h>
+#include<float.h>
 
 int main(void) {
 
-	char ch = 'A';
-	wchar_t wch = L'A';
-	short sData = 10;
-	int nData = 10;
-	long lData = 10L;
-	long int lnData = 10L;
-	long long int llnData = 10LL;
+	double dDataa = 123.456;
 
-	unsigned char byNewData = 0;
-	unsigned short sNewData = 65535U;
-	unsigned int uNewData = 1U;
-	unsigned long int ulNewData = 1UL;
-	unsigned long long int ullNewData = 1ULL;
+	printf("%f\n", dDataa);
+	printf("%E - %E\n", DBL_MIN, DBL_MAX);
 
 	return 0;
 }
 /*/================================//
- p.045 - integer01.c
+ p.050 - DoubleRange.c
 //================================/*/
