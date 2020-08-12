@@ -1,12 +1,18 @@
 ﻿#include<stdio.h>
 
+	/*
+	이 구간의 코드는 모두 주석문입니다.
+	*/
+
 int main(void) {
 
-	char ch1 = 'A', ch2 = 'B', ch3 = 'C';
-	char szData[4] = { 'A','B','C' };
-	char szNewData[4] = { "ABC" };
+	//결과를 저장하는 변수입니다.
+	int nResult = 10;
+	char ch = 'A';	//사용자 입력
+
+	//printf("Hello, World!\n");
 	return 0;
 }
 /*/================================//
- p.051 - String01.c
+ p.054 - Comment01.c
 //================================/*/
