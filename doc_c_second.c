@@ -1,15 +1,12 @@
 ﻿#include<stdio.h>
-#include<float.h>
 
 int main(void) {
 
-	double dDataa = 123.456;
-
-	printf("%f\n", dDataa);
-	printf("%E - %E\n", DBL_MIN, DBL_MAX);
-
+	char ch1 = 'A', ch2 = 'B', ch3 = 'C';
+	char szData[4] = { 'A','B','C' };
+	char szNewData[4] = { "ABC" };
 	return 0;
 }
 /*/================================//
- p.050 - DoubleRange.c
+ p.051 - String01.c
 //================================/*/
