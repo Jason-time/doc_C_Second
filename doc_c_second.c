@@ -2,9 +2,22 @@
 
 int main(void) {
 
-	printf("Hello, World!\n");
+	char ch = 'A';
+	wchar_t wch = L'A';
+	short sData = 10;
+	int nData = 10;
+	long lData = 10L;
+	long int lnData = 10L;
+	long long int llnData = 10LL;
+
+	unsigned char byNewData = 0;
+	unsigned short sNewData = 65535U;
+	unsigned int uNewData = 1U;
+	unsigned long int ulNewData = 1UL;
+	unsigned long long int ullNewData = 1ULL;
+
 	return 0;
 }
 /*/================================//
- p.027 - First code
+ p.045 - integer01.c
 //================================/*/
