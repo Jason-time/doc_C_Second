@@ -3,15 +3,14 @@
 
 int main(void) {
 
-	//문자열을 저장하기 위한 배열 선언 및 정의
-	char szBuffer[32] = { 0 };
+	char szBufferLeft[32] = { 0 };
+	char szBufferRight[32] = { 0 };
 
-	//사용자가 입력한 문자열을 배열에 저장하고 출력
-	scanf("%s", szBuffer);
-	printf("%s\n", szBuffer);
+	scanf("%s%s", szBufferLeft, szBufferRight);
+	printf("%s %s\n", szBufferLeft, szBufferRight);
 
 	return 0;
 }
 /*/================================//
- p.095 - scanfstring01.c
+ p.096 - scanfstring02.c
 //================================/*/
