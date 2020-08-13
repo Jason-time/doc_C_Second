@@ -2,22 +2,27 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	int x = 10;
 
-	//1. x에 저장된 값과 1을 더해 다시 x에 저장한다.
-	x = x + 1;
-	printf("%d\n", x);
+	int x = 0, nResult = 0;
 
-	//2. x에 저장되어 있는 값에 1을 누산한다.
-	x += 1;
-	printf("%d\n", x);
-
-	//3. x에 저장된 값을 1 증가시킨다.
+	//x의 값을 1 증가시킨 후 출력한다.
 	++x;
 	printf("%d\n", x);
+
+	//x의 값을 1 증가시킨 후 출력한다.
+	x++;
+	printf("%d\n", x);
+
+	//x의 값을 1 증가 시킨 후 단순 대입한다.(전위식 표기).
+	nResult = ++x;
+	printf("%d, %d\n", nResult, x);
+
+	//x의 값을 nResult 에 대입한 후 x를 1 감소시킨다.(후위식 표기)
+	nResult = x--;
+	printf("%d, %d\n", nResult, x);
 
 	return 0;
 }
 /*/================================//
- p.133 - opinc01.c 계수
+ p.135 - opinc02.c 
 //================================/*/
