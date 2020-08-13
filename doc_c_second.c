@@ -2,17 +2,19 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	char cName[10];
-	int nAge = 0;
 
-	scanf("나이를 입력하세요. %d%*c", &nAge);
-	printf("이름을 입력하세요. : ");
-	gets(cName);
+	int x = 0, y = 0;
 
-	printf("당신의 나이는 %d살이고 이름은 \'%s\'입니다.",nAge,cName);
-	
+	printf("두 정수를 입력하세요. : ");
+	//사용자로부터 두 정수를 입력받아 x와 y에 순서대로 저장한다.
+	//%d와 %d 사이에 공백이 없다는 점에 주의한다!
+	scanf("%d%d", &x, &y);
+
+	//x와 y의 합을 출력한다.
+	printf("두 수의 합은 %d 입니다. \n", x + y);
+
 	return 0;
 }
 /*/================================//
- p.088 - 03-01
+ p.093 - scanfsepint01.c
 //================================/*/
