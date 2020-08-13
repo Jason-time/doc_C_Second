@@ -2,12 +2,18 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	int x = 0, y = 0;
+	int nInput, nTotal;
+	nTotal = 0;
+	scanf_s("%d", &nInput);
+	nTotal += nInput;
+	scanf_s("%d", &nInput);
+	nTotal += nInput;
+	scanf_s("%d", &nInput);
+	nTotal += nInput;
 
-	x = y = 10;
-	printf("%d, %d\n", x,y );
+	printf("Total : %d\n", nTotal);
 	return 0;
 }
 /*/================================//
- p.127 - opassign02.c
+ p.129 - 세 정수의 누적 및 출력
 //================================/*/
