@@ -3,15 +3,13 @@
 
 int main(void) {
 
-	int x = 0;
-	scanf("%d", &x);
+	int second = 0;
+	scanf("%d", &second);
 
-	//int / in 는 int이므로 소수점 이하는 버려지고 출력된다.
-	printf("3으로 나눈 몫 : %d\n", x / 3);
-	//몫은 버리고 나머지(int)만 출력한다.
-	printf("3으로 나눈 나머지 : %d\n", x % 3);
+	printf("%d초는 %02d시간 %02d분 %02d초 입니다. ", second,
+		second / 3600, (second % 3600) / 60, second % 60);
 	return 0;
 }
 /*/================================//
- p.117 - operator04.c
+ p.119 - 04-02.c
 //================================/*/
