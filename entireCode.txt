@@ -936,3 +936,35 @@ int main(void) {
  p.140 - opmask01.c	마스크 연산
 //================================/*/
 
+5. 연산자-응용
+	5.1 sizeof 연산자
+	5.2 관계 연산자
+	5.3 논리 연산자
+	5.3.1 논리합(OR)과 논리곱(AND)
+	5.3.2 부정
+	5.3.3 쇼트서킷
+	5.4 조건 연산자(삼항 연산자)
+	5.4.1 최댓값 구하기
+	5.4.2 최댓값 구하기 방식 비교
+
+#include<stdio.h>
+#pragma warning (disable: 4996) 
+
+int main(void) {
+
+	int nData = 10;
+
+	//sizeof 연산자의 피연산자는 자료형이다.
+	printf("%d, %d, %d\n", sizeof(5), sizeof(nData), sizeof(int));
+	printf("%d, %d\n", sizeof('A'), sizeof(char));
+	printf("%d, %d\n", sizeof(123.45F), sizeof(123.45));
+
+	//연산식 결괏값의 자료형의 크기를 측정한다.
+	printf("%d, %d\n", sizeof(nData + 10), sizeof(++nData));
+	printf("%d\n", nData);
+	return 0;
+}
+/*=================================
+ p.149 - opsizeof01.c sizeof 연산자
+==================================/*/
+
