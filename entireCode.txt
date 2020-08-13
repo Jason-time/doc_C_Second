@@ -898,3 +898,41 @@ int main(void) {
  p.135 - opinc02.c 
 //================================/*/
 
+#include<stdio.h>
+#pragma warning (disable: 4996) 
+
+int main(void) {
+
+	int nData = 0x11223344;
+
+	printf("%08X\n", nData & 0x00FFFF00);
+	printf("%08X\n", nData | 0x2211FFFF);
+	printf("%08X\n", nData ^ 0x2211FFFF);
+	printf("%08X\n", ~nData  );
+	printf("%08X\n", nData >> 8);
+	printf("%08X\n", nData << 16);
+
+	return 0;
+}
+/*/================================//
+ p.136 - opbit01.c 비트 연산자의 사용
+//================================/*/
+
+#include<stdio.h>
+#pragma warning (disable: 4996) 
+
+int main(void) {
+
+	int nData = 0x11223344;
+
+	printf("%08X\n", nData & 0xFFFF0000);
+	printf("%08X\n", nData & 0x00FFFF00);
+	printf("%08X\n", nData & 0x0000FFFF);
+	printf("%08X\n", nData & 0xFF0000FF);
+
+	return 0;
+}
+/*/================================//
+ p.140 - opmask01.c	마스크 연산
+//================================/*/
+

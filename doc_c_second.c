@@ -3,26 +3,15 @@
 
 int main(void) {
 
-	int x = 0, nResult = 0;
+	int nData = 0x11223344;
 
-	//x의 값을 1 증가시킨 후 출력한다.
-	++x;
-	printf("%d\n", x);
-
-	//x의 값을 1 증가시킨 후 출력한다.
-	x++;
-	printf("%d\n", x);
-
-	//x의 값을 1 증가 시킨 후 단순 대입한다.(전위식 표기).
-	nResult = ++x;
-	printf("%d, %d\n", nResult, x);
-
-	//x의 값을 nResult 에 대입한 후 x를 1 감소시킨다.(후위식 표기)
-	nResult = x--;
-	printf("%d, %d\n", nResult, x);
+	printf("%08X\n", nData & 0xFFFF0000);
+	printf("%08X\n", nData & 0x00FFFF00);
+	printf("%08X\n", nData & 0x0000FFFF);
+	printf("%08X\n", nData & 0xFF0000FF);
 
 	return 0;
 }
 /*/================================//
- p.135 - opinc02.c 
+ p.140 - opmask01.c	마스크 연산
 //================================/*/
