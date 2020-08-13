@@ -2,26 +2,19 @@
 
 int main(void) {
 
-	//부호가 있는 64비트 정수형 변수 선언 및 정의
-	long long int lldData = 4294967295LL;
+	//실수 자료 형식의 메모리 크기(바이트 단위)를 출력
+	printf("%d\n", sizeof(123.456f));
+	printf("%d\n", sizeof(123.456));
 
-	//64비트 정보를 32비트로 형식 문자로 출력한다.
-	printf("%d\n", lldData);
-	printf("%u\n", lldData);
+	//float 형식을 실수 형식으로 출력
+	printf("%f\n", 123.456f);		// float
 
-	//32비트로는 표현할 수 없는 범위의 정보를 출력해본다.
-	//제대로 된 결과를 기대할 수 없다.
-	printf("%u\n", lldData + 1);
-	printf("%u\n", lldData + 2);
-	printf("%u\n", lldData + 3);
-
-	//64비트 정보를 64비트 형식 문자(%lld)로 출력한다.
-	printf("%lld\n", lldData + 1);
-	printf("%lld\n", lldData + 2);
-	printf("%lld\n", lldData + 3);
+	//double 형식을 실수 형식으로 출력
+	printf("%f\n", 123.456);		//double
+	printf("%lf\n", 123.456);		//long double
 
 	return 0;
 }
 /*/================================//
- p.078 - longlongint01.c
+ p.082 - floatprint01.c
 //================================/*/
