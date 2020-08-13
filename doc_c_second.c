@@ -2,18 +2,17 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	int nInput, nTotal;
-	nTotal = 0;
-	scanf_s("%d", &nInput);
-	nTotal += nInput;
-	scanf_s("%d", &nInput);
-	nTotal += nInput;
-	scanf_s("%d", &nInput);
-	nTotal += nInput;
+	int x = 5;
 
-	printf("Total : %d\n", nTotal);
+	printf("%d\n", 5 / 2);			//int /int ->int
+	printf("%f\n", 5.0 / 2);		// double / int -> double
+	printf("%f\n", 5 / 2.0);		// int /double ->double
+	printf("%f\n", (double)5 / 2);  // double / int -> double
+	printf("%f\n", (double)x / 2);	// double / int -> double
+	printf("%f\n", x / (double)2);	// int / double -> double
+	printf("%f\n", (double)(x / 2));// double
 	return 0;
 }
 /*/================================//
- p.129 - 세 정수의 누적 및 출력
+ p.131 - opcast01.c
 //================================/*/
