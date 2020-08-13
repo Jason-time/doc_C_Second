@@ -3,18 +3,13 @@
 
 int main(void) {
 
-	int nData = 10;
-
-	//sizeof 연산자의 피연산자는 자료형이다.
-	printf("%d, %d, %d\n", sizeof(5), sizeof(nData), sizeof(int));
-	printf("%d, %d\n", sizeof('A'), sizeof(char));
-	printf("%d, %d\n", sizeof(123.45F), sizeof(123.45));
-
-	//연산식 결괏값의 자료형의 크기를 측정한다.
-	printf("%d, %d\n", sizeof(nData + 10), sizeof(++nData));
-	printf("%d\n", nData);
+	printf("%d\n", 300 == 299.99999f);
+	printf("%d\n", 300 == 299.99999);
+	
+	printf("%d\n", 300 == 299.9999);
+	printf("%d\n", 300 == 300.00001F);
 	return 0;
 }
 /*=================================
- p.149 - opsizeof01.c sizeof 연산자
+ p.153 - oprelintfloat01.c sizeof 연산자
 ==================================/*/
