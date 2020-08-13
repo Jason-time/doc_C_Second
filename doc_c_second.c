@@ -1,18 +1,18 @@
 ﻿#include<stdio.h>
+#pragma warning (disable: 4996) 
 
 int main(void) {
-
+	char cName[10];
 	int nAge = 0;
 
-	printf("나이를 입력하세요. : ");
-	//사용자가 입력한 정보를 int 형식으로 해석하고 nAge 변수에 저장한다.
-	//그리고 & 기혼는 주소 연산자이며
-	//&nAge는 nAge변수의 주소라는 의미이다.
-	scanf_s("%d", &nAge);
+	scanf("나이를 입력하세요. %d%*c", &nAge);
+	printf("이름을 입력하세요. : ");
+	gets(cName);
 
-	printf("당신의 나이는 %d세 입니다. \n", nAge);
+	printf("당신의 나이는 %d살이고 이름은 \'%s\'입니다.",nAge,cName);
+	
 	return 0;
 }
 /*/================================//
- p.087 - scanfint01.c
+ p.088 - 03-01
 //================================/*/
