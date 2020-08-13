@@ -3,14 +3,21 @@
 
 int main(void) {
 
-	int nResult = 0;
+	char ch = 'A';
 
-	//임시결과 7을 변수에 담아둔다.
-	nResult = 3 + 4;
-	//변수에 담아둔 정보를 다시 꺼내 연산한다.
-	printf("nResult : %d\n", nResult - 5);
+	//char를 %c로 출력
+	printf("%c\n", ch);
+
+	//'char + int'는 int 형식이다.
+	printf("%c\n", ch + 1);
+	printf("%c\n", 'A' + 2);
+
+	//'double + int'는 double 형식이다.
+	//따라서 %d 형식으로 출력할 수 없다.
+	printf("%d\n", 5.0 + 2);
+	printf("%f\n", 5.0 + 2);
 	return 0;
 }
 /*/================================//
- p.112 - operator02.c
+ p.112 - TypePromotion.c
 //================================/*/
