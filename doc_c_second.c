@@ -2,17 +2,22 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	int x = 5;
+	int x = 10;
 
-	printf("%d\n", 5 / 2);			//int /int ->int
-	printf("%f\n", 5.0 / 2);		// double / int -> double
-	printf("%f\n", 5 / 2.0);		// int /double ->double
-	printf("%f\n", (double)5 / 2);  // double / int -> double
-	printf("%f\n", (double)x / 2);	// double / int -> double
-	printf("%f\n", x / (double)2);	// int / double -> double
-	printf("%f\n", (double)(x / 2));// double
+	//1. x에 저장된 값과 1을 더해 다시 x에 저장한다.
+	x = x + 1;
+	printf("%d\n", x);
+
+	//2. x에 저장되어 있는 값에 1을 누산한다.
+	x += 1;
+	printf("%d\n", x);
+
+	//3. x에 저장된 값을 1 증가시킨다.
+	++x;
+	printf("%d\n", x);
+
 	return 0;
 }
 /*/================================//
- p.131 - opcast01.c
+ p.133 - opinc01.c 계수
 //================================/*/
