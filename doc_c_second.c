@@ -3,25 +3,19 @@
 
 int main(void) {
 
-	int x = 10;
-	//int * int -> %d
-	printf("%d\n", x * 10);
-	//int * double -> %d (출력 불가능)
-	printf("%d\n", x * 10.0);
+	int nInput = 0;
+	printf("정수를 입력하세요.: ");
 
-	//int / int는 int 형식이다. 실수 형식이 아니라는 저에 주의!
-	//단, 소수점 이하는 절사된다.
-	printf("%d\n", x / 10);
-
-	//int / int 는 int 형식이므로 %f로 출력할 수 없다.
-	printf("%d\n", 5 / 2);
-	//소수점 이하가 절사되므로 사실상 정수 2를 %f로 출력하는 것이다.
-	printf("%f\n", 5 / 2);
-
-	//double / int 는 double 형식이다.
-	printf("%f\n", 5.0 / 2);
+	//사용자로부터 정수를 입력받는다.
+	scanf("%d", &nInput);
+		if (nInput == 0) {
+			printf("0으로 나눌수는 없습니다. 종료합니다.\n");
+			return 0; 
+	}
+	//만일 사용자가 0을 입력한다면 10을 0으로 나눠야 한다.
+	printf("%d\n", 10 / nInput);
 	return 0;
 }
 /*/================================//
- p.114 - opdoubleint02.c
+ p.116 - opdividebyzero.c
 //================================/*/
