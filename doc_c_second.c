@@ -2,17 +2,19 @@
 #pragma warning (disable: 4996) 
 
 int main(void) {
-	char szBuffer[32] = { 0 };
+	//nTemp는 '교환'을 위해 필요한 변수이다.
+	int x = 10, y = 20, nTmp = 0;
+	printf("Before: x(%d), y(%d)\n", x, y);
 
-	//상수에 대입 연산을 수행할 수 없다. 
-	3 = 4;
-	//배열의 이름은 '주소상수'다. 변수가 아니다. 
-	szBuffer = 'A';
+	//두 변수 x와 y에 저장된 값을 서로 교환한다. 
+	nTmp = x;
+	x = y;
+	y = nTmp;
 
-
-
+	//교환이 완료된 것을 확인하기 위해 출력한다.
+	printf("After: x(%d), y(%d)", x, y);
 	return 0;
 }
 /*/================================//
- p.121 - opassignconst01.c
+ p.123 - opswap1.c
 //================================/*/
