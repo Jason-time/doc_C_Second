@@ -6,11 +6,11 @@ int main(void) {
 	int nInput = 0, bResult = 0;
 
 	scanf("%d", &nInput);
-	bResult = nInput < 4 || nInput >= 60;
+	bResult = nInput > 3 && nInput < 20;
 	printf("Result : %d (1:True, 0:False)\n", bResult);
 
 	return 0;
 }
 /*================================================
- p.155 - oplogical01.c 논리합(OR)과 논리곱(AND)
+ p.157 - oplogical02.c  논리곱(AND)
 ==================================================/*/
