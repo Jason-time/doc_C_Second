@@ -2,23 +2,18 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nInput = 0,nMax=0;
+	int nBasic = 1000;
+	int nAge = 0;
 
-	scanf("%d", &nInput);
-	if (nMax < nInput)
-		nMax = nInput;
+	printf("나이를 입력하세요. : ");
+	scanf("%d", &nAge);
 
-	scanf("%d", &nInput);
-	if (nMax < nInput)
-		nMax = nInput;
-
-	scanf("%d", &nInput);
-	if (nMax < nInput)
-		nMax = nInput;
-
-	printf("MAX : %d", nMax);
+	if (nAge < 20) {
+		nBasic = 1000 - 1000 * 0.25;
+	}
+	printf("최종요금 : %d원", nBasic);
 	return 0;
 }
 /*================================================
- p.186 - 	6.1 if문을 이용한 최댓값 구하기
+ p.187 - 06-02 버스 요금 계산 프로그램
 ==================================================/*/
