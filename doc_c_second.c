@@ -2,18 +2,25 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nBasic = 1000;
+	int nCharge = 1000;
 	int nAge = 0;
-
-	printf("나이를 입력하세요. : ");
+	double nRate = 0.0;
 	scanf("%d", &nAge);
 
-	if (nAge < 20) {
-		nBasic = 1000 - 1000 * 0.25;
+	if(nAge<14)
+	{
+		if (nAge < 4)nRate = 0;
+		else
+			nRate = 0.5;
 	}
-	printf("최종요금 : %d원", nBasic);
+	else {
+		if (nAge < 20) nRate = 0.75;
+		else nRate = 1.0;
+	}
+
+	printf("최종요금 : %.0f원", nCharge*nRate);
 	return 0;
 }
 /*================================================
- p.187 - 06-02 버스 요금 계산 프로그램
+ p.197 - 나이에 따른 분류 및 요금계산
 ==================================================/*/
