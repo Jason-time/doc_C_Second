@@ -2,37 +2,22 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nInput = 0;
-	char chCredit = 'X';
+	int nInput;
 
-	printf("점수를 입력하세요. : ");
+	//레이블 이름 설정, goto 문은로 이동할 수 있는 지점
+INPUT:
+	printf("Input number : ");
 	scanf("%d", &nInput);
 
-	//소수점 이하가 절사되며 결과는 '정수'이다. 
-	switch (nInput/10)
-	{
-		//90~100점인 경우를 모두 한 번에 처리한다.
-	case 10:
-	case 9:
-		chCredit = 'A';
-		break;
-	case	8:
-		chCredit = 'B';
-		break;
-	case 7:
-		chCredit = 'C';
-		break;
-	case 6:
-		chCredit = 'D';
-		break;
+	//사용자가 입력한 값이 0~10 범위인지 검사하고 조건에 맞지 않으면
+	//INPUT 레이블로 흐름을 변경한다. 
+	if (nInput < 0 || nInput>10)
+		goto INPUT;
 
-	default:
-		chCredit = 'F';
-	}
+	puts("END");
 
-	printf("학점 : %c\n", chCredit);
 	return 0;
 }
 /*================================================
- p.208 - ctrlswitchcase01.c 
+ p.210 - ctrlgoto01.c 
 ==================================================/*/
