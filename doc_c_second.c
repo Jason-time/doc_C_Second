@@ -2,20 +2,19 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nInput = 0;
-	scanf("%d", &nInput);
+	int  nIndex = 0;
 
-	if (nInput < 1) nInput = 1;
-	else if (nInput > 9) nInput = 9;
-
-	while (nInput > 0) {
-		putchar('*');
-		nInput--;
+	//nIndex 변수는 반복조건에 직접 영향을 준다.
+	while (nIndex >= 0) {
+		//반복구간 내부 연산을 수행하더라도 nIndex는 
+		//달라지지 않는다. 따라서 반복이 끝날 수 없다.
+		nIndex++;
 	}
-	putchar('\n');
+
+	printf("%d\n", nIndex);
 	return 0;
 }
 /*================================================
- p.225 - 07-01 사용자가 입력한 숫자만큼 * 출력하기
+ p.227 - ctrlendless02.c / 7.1.2 무한루프
 ==================================================/*/
 
