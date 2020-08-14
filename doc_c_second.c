@@ -2,22 +2,19 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nInput;
+	char ch = 0;
 
-	//레이블 이름 설정, goto 문은로 이동할 수 있는 지점
-INPUT:
-	printf("Input number : ");
-	scanf("%d", &nInput);
+	//한 글자를 입력받아 ch에 저장한 후 이를 '\n' 과 비교
+	while ((ch = getchar()) != '\n') {
 
-	//사용자가 입력한 값이 0~10 범위인지 검사하고 조건에 맞지 않으면
-	//INPUT 레이블로 흐름을 변경한다. 
-	if (nInput < 0 || nInput>10)
-		goto INPUT;
+		//조건이 맞는 경우
+		putchar(ch);
+	}
 
-	puts("END");
-
+	//'\n'이 등장해 조건을 만족하지 못해 반복문이 끝남
 	return 0;
 }
 /*================================================
- p.210 - ctrlgoto01.c 
+ p.223 - opswap1.c 
 ==================================================/*/
+
