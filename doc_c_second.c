@@ -2,21 +2,19 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nMax=-100, nInput = 0;
+	int nAge = 0;
+	printf("나이를 입력하세요. : ");
+	scanf("%d", &nAge);
 
-	scanf("%d", &nInput);
+	//if 문 시작 
+	if (nAge >= 20)
+		//조건식을 만족한 경우에만 실행하는 구문
+		printf("당신의 나이는 %d세 입니다.\n", nAge);
 
-	nMax = nInput > nMax ?  nInput : nMax;
-
-	scanf("%d", &nInput);
-	nMax = nInput > nMax ? nInput : nMax;
-
-	scanf("%d", &nInput);
-	nMax = nInput > nMax ? nInput : nMax;
-
-	printf("MAX : %d\n", nMax);
+	//if문 끝
+	puts("End");
 	return 0;
 }
 /*================================================
- p.171 - 세 정수 중에서 가장 큰 수 구하기(서바이벌 방식)
+ p.183 - ctrlbranch01.c	6.1.1 기본 구조
 ==================================================/*/
