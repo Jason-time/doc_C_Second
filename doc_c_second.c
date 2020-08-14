@@ -2,19 +2,20 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	char ch = 0;
+	int nInput = 0;
+	scanf("%d", &nInput);
 
-	//한 글자를 입력받아 ch에 저장한 후 이를 '\n' 과 비교
-	while ((ch = getchar()) != '\n') {
+	if (nInput < 1) nInput = 1;
+	else if (nInput > 9) nInput = 9;
 
-		//조건이 맞는 경우
-		putchar(ch);
+	while (nInput > 0) {
+		putchar('*');
+		nInput--;
 	}
-
-	//'\n'이 등장해 조건을 만족하지 못해 반복문이 끝남
+	putchar('\n');
 	return 0;
 }
 /*================================================
- p.223 - opswap1.c 
+ p.225 - 07-01 사용자가 입력한 숫자만큼 * 출력하기
 ==================================================/*/
 
