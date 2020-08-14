@@ -2,26 +2,37 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nFee= 1000;
-	int nAge = 0;
-	double nRate = 0.0;
-	scanf("%d", &nAge);
+	int nInput = 0;
+	char chCredit = 'X';
 
-	if(nAge<=19)
+	printf("점수를 입력하세요. : ");
+	scanf("%d", &nInput);
+
+	//소수점 이하가 절사되며 결과는 '정수'이다. 
+	switch (nInput/10)
 	{
-		nRate = 0.25;
-		if (nAge>=4 && nAge<=13)nRate = 0.5;
-		else if(nAge<4)
-			nRate = 1.0;
-	}
-	else {
-		if (nAge >= 20 && nAge<65) nRate = 0.0;
-		else nRate = 1.0;
+		//90~100점인 경우를 모두 한 번에 처리한다.
+	case 10:
+	case 9:
+		chCredit = 'A';
+		break;
+	case	8:
+		chCredit = 'B';
+		break;
+	case 7:
+		chCredit = 'C';
+		break;
+	case 6:
+		chCredit = 'D';
+		break;
+
+	default:
+		chCredit = 'F';
 	}
 
-	printf("최종요금 : %.0f원", nFee-nFee*nRate);
+	printf("학점 : %c\n", chCredit);
 	return 0;
 }
 /*================================================
- p.204 - 단계별 분류에 따른 버스요금 계산
+ p.208 - ctrlswitchcase01.c 
 ==================================================/*/
