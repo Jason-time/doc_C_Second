@@ -2,18 +2,20 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nStar = 0,nLevel=0,i=0;
-	for (i;i < 5;++i)
+	int nStar = 0,i=0;
+	for (i=0;i < 5;++i)
 	{
-
-		for (nStar = 0;nStar < i + 1;nStar++)
-			printf("* ");
+		for (nStar = 0;nStar < 5;nStar++)
+		{
+			if (i + nStar >= 4) printf("\t*");
+			else putchar('\t');
+		}
 		puts("");
 	}
 
 	return 0;
 }
 /*================================================
- p.241 07-05 첫 번째 직각 삼각형 출력하기
+ p.241 07-06 두 번째 직각 삼각형 출력하기
 ==================================================/*/
 
