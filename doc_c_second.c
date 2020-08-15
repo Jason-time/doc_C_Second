@@ -2,22 +2,30 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	char szBuffer[32] = { 0 };
-	int nLength = 0;
+	int aList[3][4] = {
+		{10,20,30},
+		{40,50,60}
+	};
+	int i = 0, j = 0;
 
-	//이름을 입력받아 배열에 저장한다.
-	printf("Input your name : ");
-	gets(szBuffer);
+	//여기에 들어갈 코드를 작성합니다.
+	for (i = 0;i < 2;i++)
+		for (j = 0;j < 3;j++)
+			aList[i][3] += aList[i][j];
 
-	//배열의 시작부터 '\0'가 나올 때까지 계속 다음으로 넘기고 확인한다.
-	while (szBuffer[nLength] != '\0')
-		nLength++;
+	for (j = 0;j < 4;j++)
+		for (i = 0;i < 2;i++)
+			aList[2][j] += aList[i][j];
 
-	//이름과 문자열의 길이를 출력한다.
-	printf("Your name is %s(%d). \n", szBuffer, nLength);
+	for (i = 0;i < 3;++i) {
+		for (j = 0;j < 4;++j)
+			printf("%d\t", aList[i][j]);
+		putchar('\n');
+	}
 	return 0;
 }
+
 /*================================================
- p.277 arraystring02.c / 8.3.2 문자열의 끝이 '\0'인 이유
+ p.282 08-03 / 2차원 배열의 행과 열의 총합 계산하기
 ==================================================/*/
 
