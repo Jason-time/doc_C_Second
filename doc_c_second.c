@@ -5,7 +5,7 @@ int main(void) {
 	int nStar = 0,i=0;
 	for (i=0;i < 5;++i)
 	{
-		for (nStar = 0;nStar < 5;nStar++)
+		for (nStar = 0;nStar < 5+i;nStar++)
 		{
 			if (i + nStar >= 4) printf("\t*");
 			else putchar('\t');
