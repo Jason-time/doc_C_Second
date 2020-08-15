@@ -2,20 +2,18 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int nStar = 0,i=0;
-	for (i=0;i < 5;++i)
+	int nInput=-1;
+
+	while (nInput < 0 || nInput > 10)
 	{
-		for (nStar = 0;nStar < 5+i;nStar++)
-		{
-			if (i + nStar >= 4) printf("\t*");
-			else putchar('\t');
-		}
-		puts("");
+		printf("Input number : ");
+	scanf("%d", &nInput);
 	}
+	puts("END");
 
 	return 0;
 }
 /*================================================
- p.241 07-06 두 번째 직각 삼각형 출력하기
+ p.242 07-07 피라미드 출력하기
 ==================================================/*/
 
