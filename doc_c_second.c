@@ -2,14 +2,18 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 	int nInput1 = 0, nInput2 = 0;
-
-	while (nInput1 < 10) {
-		nInput2 += ++nInput1;
+	scanf("%d", &nInput1);
+	if (nInput1 > 9 || nInput1 < 2)
+		puts("ERROR");
+	else {
+	while (nInput2 < 9) {
+		printf("%d * %d = %d\n", 
+			nInput1, ++nInput2, nInput1 * nInput2);
+		}
 	}
-	printf("%d", nInput2);
 	return 0;
 }
 /*================================================
- p.237 07-03 1에서 10까지의 총합 구하기 
+ p.237 07-04 구구단에서 한 단만 출력하기
 ==================================================/*/
 
