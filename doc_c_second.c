@@ -3,18 +3,13 @@
 int main(void) {
 	int nInput1 = 0, nInput2 = 0;
 
-	while (nInput1 < 5) {
-		nInput2 = 0;
-		while (nInput2 < 5) {
-			printf("*\t");
-			nInput2++;
-		}
-		nInput1++;
-		puts("\n");
+	while (nInput1 < 10) {
+		nInput2 += ++nInput1;
 	}
+	printf("%d", nInput2);
 	return 0;
 }
 /*================================================
- p.234 - 5행 5열의 사각형 출력하기
+ p.237 07-03 1에서 10까지의 총합 구하기 
 ==================================================/*/
 
