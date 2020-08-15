@@ -3,21 +3,24 @@
 int main(void) {
 
 	int aList[5][5] = { 0 };
-	int i = 0, j = 0, nCounter = 0;
+	int i = 0, j = 0, nCounter = 0,nOffset=1;
 
 	for (i = 0;i < 5;++i) {
-		//짝수 행과 홀수 행을 구별한다.
-		if (i % 2 == 0)
-			//짝수 행
-			for (j = 0;j < 5;++j)
-				//순방향으로 행을 채운다.
-				aList[i][j] = ++nCounter;
-		else
-			//홀수 행
-			for (j = 0;j < 5;++j)
-				//마치 보수를 취하듯 역방향 인덱스를 계산한다.
-				aList[i][4-j] = ++nCounter;
+		// 홀수 행과 짝수 행을 구별하고 첫 번째 요소의 초깃값을 결정한다.
+		if (i % 2 == 0) nCounter = i * 5;
+		else            nCounter = (i + 1) * 5 + 1;
+
+		for (j = 0;j < 5;++j) {
+			//nOffset이 양수면 nCounter는 증가하고
+			//음수면 반대로 감소한다.
+			nCounter += nOffset;
+			aList[i][j] = nCounter;
+			}
+		//토글 스위치처럼 행마다 양수/음수로 변경된다.
+		//여기서 '-'는 부호 변경 연산자이다.
+		nOffset = -nOffset;
 	}
+
 
 	for (i = 0; i < 5;i++) {
 		for (j = 0; j < 5; ++j)
@@ -29,6 +32,6 @@ int main(void) {
 }
 
 /*================================================
- p.309 arraycross02.c 지그재그로 2차원 배열 채우기
+ p.310 arraycross03.c 
 ==================================================/*/
 
