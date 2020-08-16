@@ -1,34 +1,25 @@
 ﻿#include<stdio.h>
 #pragma warning (disable: 4996) 
+
+//정수 셋을 매개변수로 받고 최댓값을 반환하는 함수 선언 및 정의
+int GetMax(int a, int b, int c) {
+
+	//GetMax() 함수의 지역변수 선언 및 정의
+	int nMax = a;
+	if (b > nMax) nMax = b;
+	if (c > nMax) nMax = c;
+	return nMax;
+}
 int main(void) {
+	int nResult = 0;
+	//함수가 반환한 값을 %d 형식으로 출력한다.
+	printf("MAX : %d\n", GetMax(1, 2, 3));
 
-	int aList[51][51] = { 0 };
-	int x = -1, y = 0, nCounter = 0;
-	int i = 0, j = 0, nLength = 9, nDirection = 1;
-	int nInput = 0;
-	scanf("%d", &nInput);
-	nLength = nInput * 2 - 1;
-	for (nLength = nLength; nLength > 0;nLength -= 2) {
+return 0;
 
-		for (i = 0;i < nLength;++i) {
-
-			if (i < nLength / 2 + 1)x += nDirection;
-			else                    y += nDirection;
-
-			aList[y][x] = ++nCounter;
-		}
-		nDirection = -nDirection;
-	}
-
-	for (i = 0;i < nInput;++i) {
-		for (j = 0;j < nInput;++j) printf("%d\t", aList[i][j]);
-
-		putchar('\n');
-	}
-	return 0;
 }
 
 /*================================================
- p.314 09-04 달팽이 배열 채우기
+p.333 function03.c	/ 10.1.2 반환 자료형
 ==================================================/*/
 
