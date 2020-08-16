@@ -3,25 +3,21 @@
 int main(void) {
 
 	int aList[5][5] = { 0 };
-	// nFlag 변수는 반복문 내부에서 매번 참/거짓으로 바뀐다.
-	int i = 0, j = 0, nCounter = 0,nFlag=1;
+	int x = -1, y = 0, nCounter = 0;
+	int i = 0, j = 0, nLength = 9, nDirection = 1;
 
-	for (i = 0;i < 5;++i) {
-		//토글을 위한 플래그 변수
-		if (nFlag) {
-			//정방향 채우기
-			for (j = 0;j < 5;++j) aList[i][j] = ++nCounter;
-			//다음 반복에서 거짓인 경우가 선택되도록 한다.
-			nFlag = 0;
+	for (nLength = 9; nLength > 0;nLength -= 2) {
+
+		for (i = 0;i < nLength;++i) {
+
+			if (i < nLength / 2 + 1)x += nDirection;
+			else                    y += nDirection;
+
+			aList[y][x] = ++nCounter;
 		}
-		else {
-			//역방향 채우기
-			for (j = 0;j < 5;++j) aList[i][4 - j] = ++nCounter;
-			//다음 반복에서 참인 경우가 선택되도록 한다..
-			nFlag = 1;
-		}
+		nDirection = -nDirection;
 	}
-	//배열 출력
+
 	for (i = 0;i < 5;++i) {
 		for (j = 0;j < 5;++j) printf("%d\t", aList[i][j]);
 
@@ -31,6 +27,6 @@ int main(void) {
 }
 
 /*================================================
- p.312 arraycross04.c 
+ p.314 09-04 달팽이 배열 채우기
 ==================================================/*/
 
