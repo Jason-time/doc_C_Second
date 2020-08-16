@@ -2,11 +2,13 @@
 #pragma warning (disable: 4996) 
 int main(void) {
 
-	int aList[5][5] = { 0 };
+	int aList[51][51] = { 0 };
 	int x = -1, y = 0, nCounter = 0;
 	int i = 0, j = 0, nLength = 9, nDirection = 1;
-
-	for (nLength = 9; nLength > 0;nLength -= 2) {
+	int nInput = 0;
+	scanf("%d", &nInput);
+	nLength = nInput * 2 - 1;
+	for (nLength = nLength; nLength > 0;nLength -= 2) {
 
 		for (i = 0;i < nLength;++i) {
 
@@ -18,8 +20,8 @@ int main(void) {
 		nDirection = -nDirection;
 	}
 
-	for (i = 0;i < 5;++i) {
-		for (j = 0;j < 5;++j) printf("%d\t", aList[i][j]);
+	for (i = 0;i < nInput;++i) {
+		for (j = 0;j < nInput;++j) printf("%d\t", aList[i][j]);
 
 		putchar('\n');
 	}
