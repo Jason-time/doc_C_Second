@@ -1,54 +1,41 @@
 ﻿#include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
 #pragma warning (disable: 4996) 
-
-// 나이를 매개변수로 받고 요금을 반환하는 기능을 제공
-int  GetFee(int nAge) {
-	int nFee = 1000;
-	if (nAge < 20) nFee /= 2;
-
-	return nFee;
-}
-
-//메뉴를 출력하고 사용자로부터 선택을 입력받는 인터페이스
-int PrintMenu(void) {
+int GetData(void){
 	int nInput = 0;
-
-	system("cls");
-	printf("[1]New\t[2]Search\t[3]Print\t[4]Remove\t[0]Exit\n:");
-	nInput = getch();
-	putch(nInput);
-	nInput -= 48;
-	putchar('\n');
-
-	//scanf("%d", &nInput);;
+	printf("숫자를 입력하세요. : ");
+	scanf("%d", &nInput);
 	return nInput;
 }
-int GetAge(void) {
-	int nAge = 0;
-	printf("나이를 입력하세요. : ");
-	scanf("%d", &nAge);
-	return nAge;
+
+int GetMax(int a,int b, int c){
+	int nMax = a;
+	if (b > nMax)	nMax = b;
+	if (c > nMax)	nMax = c;
+	return nMax;
+}
+
+void PrintData(int a, int b, int c, int nMax) {
+	printf("%d, %d, %d, 중 가장 큰 수는 %d 입니다.\n", a, b, c, nMax);
 }
 int main(void) {
-	int nMenu = 0, nAge = 0;
 
-	//간단히 구현한 이벤트 루프
-	while ((nMenu = PrintMenu()) != 0) {
-		if (nMenu == 1) {
-			nAge = GetAge();
-			printf("요금은 %d원 입니다.", GetFee(nAge));
+	int aList[3] = { 0 };
+	int nMax  = -9999, i = 0;
+	//입력
+	for (i = 0;i < 3;++i)
+		aList[i] = GetData();
 
-			_getch();
-		}
-	}
-	puts("Bye~~!");
+	//최대값 계산
+	nMax = GetMax(aList[0], aList[1], aList[2]);
+
+	//출력
+	PrintData(aList[0], aList[1], aList[2], nMax);
+
 	return 0;
 
 }
 
 /*================================================
-p.315 arraylookup01.c	/ 9.4 Lookup 배열
+p.347 10-01 / 사용자가 입력한 값에서 최댓값 구하기와 코드 분할
 ==================================================/*/
 
