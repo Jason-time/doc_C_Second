@@ -4,33 +4,21 @@
 
 int main(void) {
 
-	// 문자 배열(char[16])의 선언 및 정의
-	// 선언한 크기는 char[16]이지만 초기화는 char[6] 문자열로 한다.
-
 	char szBuffer[16] = { "Hello" };
-
-	//문자 배열을 가리키는 문자 포인터 변수의 선언 및 정의
 	char* pszData = szBuffer;
-	int nLength = 0;
 
-	//pszData 포인터 변수가 가리키는 대상에 저장된 char형 데이터가
-	//문자열의 끝을 의미하는 NULL문자가 될 때까지 반복문 수행
-	while (*pszData != '\0') {
-
-		//포인터를 다음으로 한 칸 이동 시킨다!!
+	//문자열의 길이를 측정하기 위해 NULL 문자가 저장된 위치를 찾아낸다.
+	while (*pszData!='\0')
 		pszData++;
-		nLength++;
-	}
-
-	//strlen() 함수로 문자열의 길이(바이트 단위 크기)를 출력한다.
-	printf("Length : %d\n", nLength);
-	printf("Length : %d\n", strlen(szBuffer));
-	printf("Length : %d\n", strlen("world"));
+	//NULL 문자가 저장된 위치(주소)에서 시작 위치(주소)를 빼면
+	//문자열의 길이를 알 수 있다.
+	printf("Length : %d\n", pszData - szBuffer);
 	return 0;
+
 
 }
 
 /*================================================
-p.379 ptrstring01.c  
+p.382 ptrstring02.c / 주소 차이를 이용해 문자열의 길이를 측정하는 예  
 ==================================================/*/
 
