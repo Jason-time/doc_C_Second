@@ -7,18 +7,16 @@ int main(void) {
 	char szBuffer[12] = { "TestString" };
 	char* pszData = "TestString";
 
-	//두 메모리에 저장된 값이 같은 경우
-	printf("%d\n", memcmp(szBuffer, pszData, 10));
-
-	//왼쪽("teststring")이 더 큰 경우
-	printf("%d\n", memcmp("teststring", pszData, 10));
-
-	//오른쪽(pszData)이 더 큰 경우
-	printf("%d\n", memcmp("DataString", pszData, 10));
+	//다음 코드들은 주소와 상관없이 대상 메모리에 저장된 
+	//문자열이 같은지 비교한다.
+	//만일 길이가 다르면 무조건 같은 문자열이 아니다.
+	printf("%d\n", strcmp(szBuffer, pszData));
+	printf("%d\n", strcmp("TestString", pszData));
+	printf("%d\n", strcmp("Test", "TestString"));
 	return 0;
 }
 
 /*================================================
-p.396 ptrmemcmp01.c  / 11.2.3 메모리 비교(memcmp(), strcmp()) 
+p.400 ptrstrcmp02.c  / 11.2.3 메모리 비교(strcmp()) 
 ==================================================/*/
 
