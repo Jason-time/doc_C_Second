@@ -1,24 +1,30 @@
 ﻿#include<stdio.h>
 #pragma warning (disable: 4996) 
-#include<string.h>
+#include<stdlib.h>
 
 int main(void) {
 
-	char szBuffer[16] = { "Hello" };
-	char* pszData = szBuffer;
+	int* pList = NULL, i = 0;
 
-	//문자열의 길이를 측정하기 위해 NULL 문자가 저장된 위치를 찾아낸다.
-	while (*pszData!='\0')
-		pszData++;
-	//NULL 문자가 저장된 위치(주소)에서 시작 위치(주소)를 빼면
-	//문자열의 길이를 알 수 있다.
-	printf("Length : %d\n", pszData - szBuffer);
+	//12바이트(sizeof(int)*3) 메모리를 동적 할당하고 시작 주소를
+	//pList 포인터 변수에 저장
+
+	pList = (int*)malloc(sizeof(int) * 3);
+
+	//동적 할당한 대상 메모리를 배열 연산자로 접근한다.
+	pList[0] = 10;
+	pList[1] = 20;
+	pList[2] = 30;
+
+	for (i = 0;i < 3;++i)
+		printf("%d\n", pList[i]);
+
+	//동적 할당한 메모리를 해제한다.
+	free(pList);
 	return 0;
-
-
 }
 
 /*================================================
-p.382 ptrstring02.c / 주소 차이를 이용해 문자열의 길이를 측정하는 예  
+p.385 ptrmalloc01.c / 11.2 메모리 동적 할당 및 관리 
 ==================================================/*/
 
