@@ -4,25 +4,21 @@
 
 int main(void) {
 
-	char szBuffer[12] = { "HelloWorld" };
-	char szNewBuffer[12] = { 0 };
+	char szBuffer[12] = { "TestString" };
+	char* pszData = "TestString";
 
-	//원본에서 4바이ㅣ트만 대상 메모리로 복사
-	memcpy(szNewBuffer, szBuffer, 4);
-	puts(szNewBuffer);
+	//두 메모리에 저장된 값이 같은 경우
+	printf("%d\n", memcmp(szBuffer, pszData, 10));
 
-	//원본에서 6바이트만 대상 메모리로 복사
-	memcpy(szNewBuffer, szBuffer, 6);
-	puts(szNewBuffer);
+	//왼쪽("teststring")이 더 큰 경우
+	printf("%d\n", memcmp("teststring", pszData, 10));
 
-	//원본 메모리 전체를 대상 메모리로 복사
-	memcpy(szNewBuffer, szBuffer, sizeof(szBuffer));
-	puts(szNewBuffer);
-
+	//오른쪽(pszData)이 더 큰 경우
+	printf("%d\n", memcmp("DataString", pszData, 10));
 	return 0;
 }
 
 /*================================================
-p.392 ptrmemcpy01.c  / 11.2.2 메모리 복사
+p.396 ptrmemcmp01.c  / 11.2.3 메모리 비교(memcmp(), strcmp()) 
 ==================================================/*/
 
