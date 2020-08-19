@@ -1,34 +1,34 @@
 ﻿#include<stdio.h>
 #pragma warning (disable: 4996) 
 #include<string.h>
+#include<malloc.h>
 
 int main(void) {
 
-	char szBuffer[32] = { "You are a girl." };
+	char* pszBuffer = NULL, * pszNewBuffer = NULL;
 
-	//배열의 첫 번째(0번) 요소의 값을 %c 형식으로 출력한다.
-	printf("%c\n", szBuffer[0]);
-	//0번 요소에 대한 주소인  배열의 이름(주소)에 대해 간접지정 연산을
-	//수행하고 그 안에 담긴 정보를 출력한다.
-	printf("%c\n", *szBuffer);
-	//0을 더하더라도 주소는 달라지지 않는다.
-	printf("%c\n", *(szBuffer + 0));
+	//12바이트 메모리를 동적 할당한 후
+	pszBuffer = (char*)malloc(12);
+	//NULL 문자를 포함해 영문 11자를 저장한다.
+	sprintf(pszBuffer, "%s", "TestString");
+	//동적할 메모리의 주소, 크기, 저장된 문자열 등을 출력한다.
+	printf("[%p] %d %s\n",
+		pszBuffer, _msize(pszBuffer), pszBuffer);
 
-	//배열 연산자는 '기준주소 + 인덱스' 연산겨려과로 얻은 주소를
-	//간접지정한 것과 같다.
-	printf("%c\n", szBuffer[5]);
-	printf("%c\n", *(szBuffer + 5));
+	//12바이트의 메모리를 32바이트로 '확장'을 시도한다.
+	pszNewBuffer = (char*)realloc(pszBuffer, 32);
+	if (pszNewBuffer == NULL)
+		free(pszBuffer);
+	//문자열을 덮어쓰고 주소, 메모리 크기, 저장된 내용을 확인한다.
+	sprintf(pszNewBuffer, "%s", "TestStringData");
+	printf("[%p] %d %s\n",
+		pszNewBuffer, _msize(pszNewBuffer), pszNewBuffer);
 
-	//주소연산(&)은 간접지정 연산과 상반된다.
-	//그러므로 아래 세 줄의 코드는 모두 같다.
-	printf("%s\n", &szBuffer[4]);
-	printf("%s\n", &*(szBuffer + 4));
-	printf("%s\n", szBuffer + 4);
-
+	free(pszNewBuffer);
 	return 0;
 }
 
 /*================================================
-p.404 ptrnarray02.c  / 11.2.5 배열 연산자 풀어쓰기
+p.408 ptrrealloc01.c  
 ==================================================/*/
 
