@@ -1,30 +1,28 @@
 ﻿#include<stdio.h>
 #pragma warning (disable: 4996) 
-#include<stdlib.h>
+#include<string.h>
 
 int main(void) {
 
-	int* pList = NULL, i = 0;
+	char szBuffer[12] = { "HelloWorld" };
+	char szNewBuffer[12] = { 0 };
 
-	//12바이트(sizeof(int)*3) 메모리를 동적 할당하고 시작 주소를
-	//pList 포인터 변수에 저장
+	//원본에서 4바이ㅣ트만 대상 메모리로 복사
+	memcpy(szNewBuffer, szBuffer, 4);
+	puts(szNewBuffer);
 
-	pList = (int*)malloc(sizeof(int) * 3);
+	//원본에서 6바이트만 대상 메모리로 복사
+	memcpy(szNewBuffer, szBuffer, 6);
+	puts(szNewBuffer);
 
-	//동적 할당한 대상 메모리를 배열 연산자로 접근한다.
-	pList[0] = 10;
-	pList[1] = 20;
-	pList[2] = 30;
+	//원본 메모리 전체를 대상 메모리로 복사
+	memcpy(szNewBuffer, szBuffer, sizeof(szBuffer));
+	puts(szNewBuffer);
 
-	for (i = 0;i < 3;++i)
-		printf("%d\n", pList[i]);
-
-	//동적 할당한 메모리를 해제한다.
-	free(pList);
 	return 0;
 }
 
 /*================================================
-p.385 ptrmalloc01.c / 11.2 메모리 동적 할당 및 관리 
+p.392 ptrmemcpy01.c  / 11.2.2 메모리 복사
 ==================================================/*/
 
